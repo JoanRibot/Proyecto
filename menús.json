@@ -1,0 +1,111 @@
+{
+    "1000":{
+        "name":"Comida China",
+        "stock":5,
+        "price":10.95,
+        "description":"suculenta comida al más puro estilo oriental",
+        "contenido": [
+            {
+                "id":1001,
+                "nombre":"Rollitos de primavera"
+            },
+            {
+                "id":1002,
+                "nombre":"Pato Pekín"
+            },
+            {
+                "id":1003,
+                "nombre":"Helado frito"
+            },
+            {
+                "id":1004,
+                "nombre":"Ramune"
+            }
+        ],
+        "rating":4.49
+    }
+}
+
+{
+    "2000":{
+        "name":"Comida Española",
+        "stock":5,
+        "price":10.95,
+        "description":"suculenta comida al más puro estilo oriental",
+        "contenido": [
+            {
+                "id":2001,
+                "nombre":"Gazpacho"
+            },
+            {
+                "id":2002,
+                "nombre":"Rabo de toro"
+            },
+            {
+                "id":2003,
+                "nombre":"Torrija"
+            },
+            {
+                "id":2004,
+                "nombre":"Vino tinto"
+            }
+        ],
+        "rating":5
+    }
+}
+
+{
+    "3000":{
+        "name":"Comida Tailandesa",
+        "stock":5,
+        "price":10.95,
+        "description":"suculenta comida al más puro estilo oriental",
+        "contenido": [
+            {
+                "id":3001,
+                "nombre":"Pad thai"
+            },
+            {
+                "id":3002,
+                "nombre":"Pato Pekín"
+            },
+            {
+                "id":3003,
+                "nombre":"Mango sticky rice"
+            },
+            {
+                "id":3004,
+                "nombre":"Agua de coco"
+            }
+        ],
+        "rating":3.04
+    }
+}
+
+{
+    "4000":{
+        "name":"Comida ",
+        "stock":5,
+        "price":10.95,
+        "description":"",
+        "contenido": [
+            {
+                "id":4001,
+                "nombre":""
+            },
+            {
+                "id":4002,
+                "nombre":""
+            },
+            {
+                "id":4003,
+                "nombre":""
+            },
+            {
+                "id":4004,
+                "nombre":""
+            }
+        ],
+        "rating":4.23
+    }
+}
