@@ -1,7 +1,7 @@
 {
     "1000":{
         "name":"Comida China",
-        "stock":5,
+        "stock":50,
         "price":10.95,
         "description":"suculenta comida al más puro estilo oriental",
         "contenido": [
@@ -23,15 +23,13 @@
             }
         ],
         "rating":4.49
-    }
-}
+    },
 
-{
     "2000":{
         "name":"Comida Española",
-        "stock":5,
-        "price":10.95,
-        "description":"suculenta comida al más puro estilo oriental",
+        "stock":25,
+        "price":20.95,
+        "description":"Suculenta comida al más puro estilo oriental",
         "contenido": [
             {
                 "id":2001,
@@ -50,16 +48,14 @@
                 "nombre":"Vino tinto"
             }
         ],
-        "rating":5
-    }
-}
+        "rating":4.13
+    },
 
-{
     "3000":{
         "name":"Comida Tailandesa",
-        "stock":5,
-        "price":10.95,
-        "description":"suculenta comida al más puro estilo oriental",
+        "stock":12,
+        "price":7.00,
+        "description":"Recetas inspiradas en la ciudad de Chiang Mai",
         "contenido": [
             {
                 "id":3001,
@@ -67,45 +63,173 @@
             },
             {
                 "id":3002,
-                "nombre":"Pato Pekín"
+                "nombre":"Kai Tod"
             },
             {
                 "id":3003,
                 "nombre":"Mango sticky rice"
             },
             {
-                "id":3004,
+                "id":4004,
                 "nombre":"Agua de coco"
             }
         ],
-        "rating":3.04
-    }
-}
+        "rating":4.94
+    },
 
-{
     "4000":{
-        "name":"Comida ",
-        "stock":5,
-        "price":10.95,
-        "description":"",
+        "name":"Comida Indonesia  ",
+        "stock":17,
+        "price":8.99,
+        "description":"La cocina Indonesia, tan diversa como su cultura",
         "contenido": [
             {
                 "id":4001,
-                "nombre":""
+                "nombre":"Lumpia"
             },
             {
                 "id":4002,
-                "nombre":""
+                "nombre":"Nasi Campur"
             },
             {
                 "id":4003,
-                "nombre":""
+                "nombre":"Pisang Goreng"
             },
             {
                 "id":4004,
-                "nombre":""
+                "nombre":"Smothie de frutas"
             }
         ],
         "rating":4.23
+    },
+
+    "5000":{
+        "name":"Comida Opcion veggie",
+        "stock":17,
+        "price":18.50,
+        "description":"Buena comida sin procedencia animal",
+        "contenido": [
+            {
+                "id":5001,
+                "nombre":"falafel con salsa finas hierbas"
+            },
+            {
+                "id":5002,
+                "nombre":"Toffee picante con salsa de soja y arroz"
+            },
+            {
+                "id":5003,
+                "nombre":""
+            },
+            {
+                "id":5004,
+                "nombre":"Helado de leche de coco y té verde"
+            }
+        ],
+        "rating":3.98
+    }, 
+
+    "6000":{
+        "name":"Comida Mexicana",
+        "stock":17,
+        "price":8.99,
+        "description":"Hecha con amor, y mucho picante",
+        "contenido": [
+            {
+                "id":6001,
+                "nombre":"Nachos Skinny Huevos Rancheros"
+            },
+            {
+                "id":6002,
+                "nombre":"Burrito Tex-Mex"
+            },
+            {
+                "id":6003,
+                "nombre":"Carlota de limón"
+            },
+            {
+                "id":6004,
+                "nombre":"Pulque"
+            }
+        ],
+        "rating":3.5
+    }, 
+
+    "7000":{
+        "name":"Comida Peruana",
+        "stock":17,
+        "price":13.20,
+        "description":"El orgullo de Perú, su gastronomía",
+        "contenido": [
+            {
+                "id":7001,
+                "nombre":"Cebiche"
+            },
+            {
+                "id":7002,
+                "nombre":"Lomita de Res Salteado"
+            },
+            {
+                "id":7003,
+                "nombre":"Suspiro limeño"
+            },
+            {
+                "id":7004,
+                "nombre":"Chicha morada"
+            }
+        ],
+        "rating":4.25
+    },
+
+    "8000":{
+        "name":"Comida Italiana",
+        "stock":17,
+        "price":8.99,
+        "description":"Comida tradicional, con sabores mediterráneos",
+        "contenido": [
+            {
+                "id":8001,
+                "nombre":"Minestrone"
+            },
+            {
+                "id":8002,
+                "nombre":"Lasagne"
+            },
+            {
+                "id":8003,
+                "nombre":"Tiramisú"
+            },
+            {
+                "id":8004,
+                "nombre":"Limonchelo"
+            }
+        ],
+        "rating":4.06
+    },
+
+    "9000":{
+        "name":"Comida Francesa",
+        "stock":17,
+        "price":8.99,
+        "description":"Comida francesa deliciosa",
+        "contenido": [
+            {
+                "id":9001,
+                "nombre":"Croque madame"
+            },
+            {
+                "id":9002,
+                "nombre":"Canard"
+            },
+            {
+                "id":9003,
+                "nombre":"Pancakes"
+            },
+            {
+                "id":9004,
+                "nombre":"Chouchen"
+            }
+        ],
+        "rating":4.20
     }
 }
