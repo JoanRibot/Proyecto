@@ -6,16 +6,17 @@
     display: inline;
     padding: 17px 40px;
     margin:1px; 
-    background-color:#f10606;
+    background-image:url(imagenes/fondos/fondomarge.jpeg);
 }
 #menuHorizontal ul li:hover{
-    background-color:#FFB8B8; 
+    background-image:url(imagenes/fondos/fondodegradado.jpeg);
     cursor: pointer; 
 }
 
 .tablamenus tr td{
+    background-image:url(imagenes/fondos/fondotablas.jpg);
     border-collapse: collapse;
-    padding: 20px;
+    padding: 38px;
 }
 
 .tablamenus2{
@@ -23,7 +24,7 @@
 }
 
 .margenmenus{
-    margin-left: 25%;
+    margin-left: 15%;
 }
 
 .quitar{
