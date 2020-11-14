@@ -1,10 +1,31 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #menuHorizontal ul li{
     display: inline;
     padding: 17px 40px;
     margin:1px; 
-    background-color:#f10606; 
+    background-color:#f10606;
 }
 #menuHorizontal ul li:hover{
     background-color:#FFB8B8; 
     cursor: pointer; 
+}
+
+.tablamenus tr td{
+    border-collapse: collapse;
+    padding: 20px;
+}
+
+.tablamenus2{
+    border-collapse: collapse;
+}
+
+.margenmenus{
+    margin-left: 25%;
+}
+
+.quitar{
+    list-style:none;
 }
