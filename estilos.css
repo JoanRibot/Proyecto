@@ -19,12 +19,12 @@
     padding: 38px;
 }
 
-.tablamenus2{
-    border-collapse: collapse;
+.tablamenus{
+    margin: auto;
 }
 
-.margenmenus{
-    margin-left: 15%;
+.tablamenus2{
+    border-collapse: collapse;
 }
 
 .quitar{
