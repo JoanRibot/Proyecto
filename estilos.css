@@ -2,6 +2,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.textoprincipal{
+    font-size: 25px;
+}
+
 #menuHorizontal ul li{
     display: inline;
     padding: 17px 40px;
@@ -14,7 +18,7 @@
 }
 
 .tablamenus tr td{
-    background-image:url(imagenes/fondos/fondotablas.jpg);
+    background-color: white;
     border-collapse: collapse;
     padding: 38px;
 }
@@ -30,3 +34,21 @@
 .quitar{
     list-style:none;
 }
+
+div.textoprincipal {
+    width: 50%;
+    margin: 20px auto;
+    background-color: rgb(14, 131, 59);
+    color: #fff;
+    padding: 15px;
+  }
+  
+div.textoprincipal img.fotoizquierda {
+    float: left;
+    margin-right: 15px;
+  }
+
+div.textoprincipal img.fotoderecha {
+    float: right;
+    margin-left: 15px;
+  }
