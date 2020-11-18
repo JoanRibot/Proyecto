@@ -1,8 +1,8 @@
-#Esto es el ejemplo de Udacity para sacar todos los links de la página
+## Esto es el ejemplo de Udacity para sacar todos los links de la página
 
-#page = ""
+# page = ""
 
-#def get_next_target(page):
+# def get_next_target(page):
 #    start_link = page.find('<a href=')
 #    
 #    if start_link == -1:
@@ -13,7 +13,7 @@
 #    url = page[start_quote + 1:end_quote]
 #    return url, end_quote
 
-#def all_links(page):
+# def all_links(page):
 #    while True:
 #        url, endpos = get_next_target(page)
 #        if url:
