@@ -21,15 +21,15 @@
 #            page = page[endpos:]
 #        else:
 #            break
-
+    
 
 def findMenu(url):
     nombre_menu = url.find("menuCompleto") #Esto dará un número donde se encuentra "menuCompleto"
-        if nombre_menu == -1 #Si no hay más "nombre_menu", significará que no hay más menús en esa página
-            break
     desde = url.find(">", nombre_menu) #Empezará desde ">" desde la posición número "menuCompleto"
     hasta = url.find("<", desde) #Acabará cuando encuentre el siguiente "<" desde la posición "desde"
     menu = url[desde + 1 : hasta] #El url será todo aquello que se encuentre entre ">" y "<"
+    if nombre_menu == -1: #Si no hay más "nombre_menu", significará que no hay más menús en esa página
+        return menu, hasta
     return menu, hasta #Devolverá el "menu", y el "hasta" para seguir con el bucle toda la página
 
 def findPlato1(url):
