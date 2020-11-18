@@ -31,7 +31,11 @@
     border-collapse: collapse;
 }
 
-.quitar{
+.menus{   /* Con este estilo quitamos los puntos que salen delante de las etiquetas de listas */
+    list-style:none;
+}
+
+.quitar{   /* Con este estilo quitamos los puntos que salen delante de las etiquetas de listas */
     list-style:none;
 }
 
@@ -46,9 +50,11 @@ div.textoprincipal {
 div.textoprincipal img.fotoizquierda {
     float: left;
     margin-right: 15px;
+    width: 30%;
   }
 
 div.textoprincipal img.fotoderecha {
     float: right;
     margin-left: 15px;
+    width: 30%;
   }
