@@ -21,15 +21,24 @@
 #            page = page[endpos:]
 #        else:
 #            break
+import requests
+
+from bs4 import BeautifulSoup
+
+url="../Menus/china.html"
+
+page = BeautifulSoup(url)
+
+print(page)
 
 
-def findMenu(url):
-    nombre_menu = url.find("menuCompleto") #Esto dará un número donde se encuentra "menuCompleto"
-        if nombre_menu == -1 #Si no hay más "nombre_menu", significará que no hay más menús en esa página
-            break
-    desde = url.find(">", nombre_menu) #Empezará desde ">" desde la posición número "menuCompleto"
-    hasta = url.find("<", desde) #Acabará cuando encuentre el siguiente "<" desde la posición "desde"
-    menu = url[desde + 1 : hasta] #El url será todo aquello que se encuentre entre ">" y "<"
+def findMenu(page):
+    nombre_menu = page.find("menuCompleto") #Esto dará un número donde se encuentra "menuCompleto"
+    if nombre_menu == -1: #Si no hay más "nombre_menu", significará que no hay más menús en esa página
+        return
+    desde = page.find(">", nombre_menu) #Empezará desde ">" desde la posición número "menuCompleto"
+    hasta = page.find("<", desde) #Acabará cuando encuentre el siguiente "<" desde la posición "desde"
+    menu = page[desde + 1 : hasta] #El url será todo aquello que se encuentre entre ">" y "<"
     return menu, hasta #Devolverá el "menu", y el "hasta" para seguir con el bucle toda la página
 
 def findPlato1(url):
@@ -87,4 +96,4 @@ def findValoration(url):
 
 
 if __name__  ==  "__main__":
-    assert findMenu('dnpkabefifaife <p class = "menuCompleto">Nombre del menú<p> rsoisrofsj')  ==  "Nombre del menú"
+    assert findMenu(page)  ==  "Nombre del menú"
