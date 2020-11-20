@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Esto es el ejemplo de Udacity para sacar todos los links de la página
+=======
+## Esto es el ejemplo de Udacity para sacar todos los links de la página
+>>>>>>> origin/feature/pyhton
 
 # page = ""
 
@@ -10,81 +14,97 @@
     
 #    start_quote = page.find('"', start_link)
 #    end_quote = page.find('"', start_quote + 1)
-#    url = page[start_quote + 1:end_quote]
-#    return url, end_quote
+#    html = page[start_quote + 1:end_quote]
+#    return html, end_quote
 
 # def all_links(page):
 #    while True:
-#        url, endpos = get_next_target(page)
-#        if url:
-#            print url
+#        html, endpos = get_next_target(page)
+#        if html:
+#            print html
 #            page = page[endpos:]
 #        else:
 #            break
+from htmllib.request import htmlopen
+from bs4 import BeautifulSoup
+
+abrirPagina = htmlopen("https://joanribot.github.io/Proyecto/")
+paginaHTml = BeautifulSoup(abrirPagina.read(), "html.parser")
+def findNextLink(html):
+    buscaClase=html.find("href")
 
 
-def findMenu(url):
-    nombre_menu = url.find("menuCompleto") #Esto dará un número donde se encuentra "menuCompleto"
-        if nombre_menu == -1 #Si no hay más "nombre_menu", significará que no hay más menús en esa página
-            break
-    desde = url.find(">", nombre_menu) #Empezará desde ">" desde la posición número "menuCompleto"
-    hasta = url.find("<", desde) #Acabará cuando encuentre el siguiente "<" desde la posición "desde"
-    menu = url[desde + 1 : hasta] #El url será todo aquello que se encuentre entre ">" y "<"
-    return menu, hasta #Devolverá el "menu", y el "hasta" para seguir con el bucle toda la página
+def findMenu(html):
+    buscaClase = html.find("menuCompleto") #Esto dará un número donde se encuentra "menuCompleto"
+    if buscaClase == -1: #Si no hay más "clases" iguales a esta, significará que no hay más menús en esa página
+        nextLink()
+    desde = html.find(">", buscaClase) #Empezará desde ">" desde la posición número "menuCompleto"
+    hasta = html.find("<", desde) #Acabará cuando encuentre el siguiente "<" desde la posición "desde"
+    menu = html[desde + 1 : hasta] #El html será todo aquello que se encuentre entre ">" y "<"
+    html=html[hasta:]
+    return menu, html #Devolverá el "menu", y el "html" para seguir buscando a partir de este punto
 
-def findPlato1(url):
-    nombre_primer_plato = url.find("plato1")
-    desde = url.find(">", nombre_primer_plato)
-    hasta = url.find("<", desde)
-    menu = url[desde + 1 : hasta]
-    return menu, hasta
+def findPlato1(html):
+    buscaClase = html.find("plato1")
+    desde = html.find(">", buscaClase)
+    hasta = html.find("<", desde)
+    primerPlato = html[desde + 1 : hasta]
+    html=html[hasta:]
+    return primerPlato, html
 
-def findPlato2(url):
-    nombre_segundo_plato = url.find("plato2")
-    desde = url.find(">", nombre_segundo_plato)
-    hasta = url.find("<", desde)
-    menu = url[desde + 1 : hasta]
-    return menu, hasta
+def findPlato2(html):
+    buscaClase = html.find("plato2")
+    desde = html.find(">", buscaClase)
+    hasta = html.find("<", desde)
+    segundoPlato= html[desde + 1 : hasta]
+    html=html[hasta:]
+    return segundoPlato, html
 
-def findPlato3(url):
-    nombre_tercer_plato = url.find("plato3")
-    desde = url.find(">", nombre_tercer_plato)
-    hasta = url.find("<", desde)
-    menu = url[desde + 1 : hasta]
-    return menu, hasta
+def findPlato3(html):
+    buscaClase = html.find("plato3")
+    desde = html.find(">", buscaClase)
+    hasta = html.find("<", desde)
+    tercerPlato = html[desde + 1 : hasta]
+    html=html[hasta:]
+    return tercerPlato, html
     
-def findPlato4(url):
-    nombre_cuarto_plato = url.find("plato4")
-    desde = url.find(">", nombre_cuarto_plato)
-    hasta = url.find("<", desde)
-    menu = url[desde + 1 : hasta]
-    return menu, hasta
+def bebida(html):
+    buscaClase = html.find("plato4")
+    desde = html.find(">", buscaClase)
+    hasta = html.find("<", desde)
+    bebida = html[desde + 1 : hasta]
+    html=html[hasta:]
+    return bebida, html
 
-def findStock(url):
-    numero_stock = url.find("stck")
-    desde = url.find(">", numero_stock)
-    hasta = url.find("<", desde)
-    menu = url[desde + 1 : hasta]
-    return menu, hasta
+def findStock(html):
+    buscaClase = html.find("stck")
+    desde = html.find(">", buscaClase)
+    hasta = html.find("<", desde)
+    stock = html[desde + 1 : hasta]
+    html=html[hasta:]
+    return stock, html
 
-def findPrice(url):
-    precio = url.find("price")
-    desde = url.find(">", precio)
-    hasta = url.find("<", desde)
-    menu = url[desde + 1 : hasta]
-    return menu, hasta
+def findPrice(html):
+    buscaClase = html.find("price")
+    desde = html.find(">", buscaClase)
+    hasta = html.find("<", desde)
+    precio = html[desde + 1 : hasta]
+    html=html[hasta:]
+    return precio, html
 
-def findValoration(url):
-    valoracion = url.find("valoration")
-    desde = url.find(">", valoracion)
-    hasta = url.find("<", desde)
-    menu = url[desde + 1 : hasta]
-    return menu, hasta
+def findValoration(html):
+    buscaClase = html.find("valoration")
+    desde = html.find(">", buscaClase)
+    hasta = html.find("<", desde)
+    valoracion = html[desde + 1 : hasta]
+    html=html[hasta:]
+    return valoracion, html
 
+def findAll():
 
 
 
 
 
 if __name__  ==  "__main__":
-    assert findMenu('dnpkabefifaife <p class = "menuCompleto">Nombre del menú<p> rsoisrofsj')  ==  "Nombre del menú"
+    assert findMenu(page)  ==  "Menú Dragon"
