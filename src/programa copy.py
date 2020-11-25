@@ -51,13 +51,12 @@ htmls = entra_aqui(urls)
     #return diccionario
 
 def entra_en_cada_pais(htmls):
-    diccionario = {}
     for pais in htmls:
         json_prueba = find_menu(pais)
         if len(json_prueba) != 6:
             continue
         else:
-            return diccionario
+            return json_prueba
 
 def find_menu(pais):
     paises = ["China", "España,", "Tailandia", "Mexico", "Italia", "Francia"]
@@ -68,7 +67,9 @@ def find_menu(pais):
         json, hasta = vuelve_info(pais)
         if json:
             diccionario_json[numero_menu] = json
-            for nombre_menu_pais in paises:              
+            for nombre_menu_pais in paises:
+                if json_prueba[nombre_menu_pais][4]["valoration"] == True:
+                    continue              
                 json_prueba[nombre_menu_pais] = diccionario_json
                 if len(json_prueba[nombre_menu_pais]) == 4:
                     return json_prueba
