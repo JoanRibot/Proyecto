@@ -53,8 +53,9 @@ htmls = entra_aqui(urls)
 def entra_en_cada_pais(htmls):
     diccionario = {}
     for pais in htmls:
-        if pais:
-            find_menu(pais)
+        json_prueba = find_menu(pais)
+        if len(json_prueba) != 6:
+            continue
         else:
             return diccionario
 
@@ -69,24 +70,16 @@ def find_menu(pais):
             diccionario_json[numero_menu] = json
             for nombre_menu_pais in paises:              
                 json_prueba[nombre_menu_pais] = diccionario_json
-                if len(json_prueba) != 6:
+                if len(json_prueba[nombre_menu_pais]) == 4:
+                    return json_prueba
+                while len(json_prueba) != 6:
+                    if len(json_prueba[nombre_menu_pais]) == 4:
+                        return json_prueba
                     numero_menu += 1
                     pais = pais[hasta:]
                     json, hasta = vuelve_info(pais)
                     diccionario_json[numero_menu] = json
                     json_prueba[nombre_menu_pais] = diccionario_json
-                    if len(json_prueba) != 6:
-                        numero_menu += 1
-                        pais = pais[hasta:]
-                        json, hasta = vuelve_info(pais)
-                        diccionario_json[numero_menu] = json
-                        json_prueba[nombre_menu_pais] = diccionario_json
-                        if len(json_prueba) != 6:
-                            numero_menu += 1
-                            pais = pais[hasta:]
-                            json, hasta = vuelve_info(pais)
-                            diccionario_json[numero_menu] = json
-                            json_prueba[nombre_menu_pais] = diccionario_json
                 else:
                     return json_prueba
         else:
@@ -109,8 +102,8 @@ def vuelve_info(pais):
             json[nombre] = menu
             numero_de_veces_recorrido += 1
         else:
-            return json, hasta + 1
-    return json, hasta + 1
+            return json, hasta
+    return json, hasta
 
 
 print(entra_en_cada_pais(htmls))
