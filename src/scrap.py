@@ -37,7 +37,6 @@ def findNextLink(html):
 def findMenu(html):
     buscaClase = html.find("menuCompleto") #Esto dará un número donde se encuentra "menuCompleto"
     if buscaClase == -1: #Si no hay más "clases" iguales a esta, significará que no hay más menús en esa página
-        nextLink()
     desde = html.find(">", buscaClase) #Empezará desde ">" desde la posición número "menuCompleto"
     hasta = html.find("<", desde) #Acabará cuando encuentre el siguiente "<" desde la posición "desde"
     menu = html[desde + 1 : hasta] #El html será todo aquello que se encuentre entre ">" y "<"
