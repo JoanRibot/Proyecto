@@ -62,27 +62,17 @@ def find_menu(pais):
     paises = ["China", "España,", "Tailandia", "Mexico", "Italia", "Francia"]
     diccionario_json = {}
     json_prueba = {}
-    numero_menu = 1
-    while True:
-        json, hasta = vuelve_info(pais)
-        if json:
+    numero_menu = 0
+    for nombre_menu_pais in paises:
+        numero_menu = 0
+        while len(json_prueba) <= 6:
+            numero_menu += 1
+            json, hasta = vuelve_info(pais)
+            pais = pais[hasta:]
             diccionario_json[numero_menu] = json
-            for nombre_menu_pais in paises:
-                json_prueba[nombre_menu_pais] = diccionario_json
-                if len(json_prueba[nombre_menu_pais]) == 4:
-                    return json_prueba
-                while len(json_prueba) != 6:
-                    if len(json_prueba[nombre_menu_pais]) == 4:
-                        return json_prueba
-                    numero_menu += 1
-                    pais = pais[hasta:]
-                    json, hasta = vuelve_info(pais)
-                    diccionario_json[numero_menu] = json
-                    json_prueba[nombre_menu_pais] = diccionario_json
-                else:
-                    return json_prueba
-        else:
-            return json_prueba
+            json_prueba[nombre_menu_pais] = diccionario_json
+            if len(json_prueba[nombre_menu_pais]) == 4:
+                break
     return json_prueba
 
 
@@ -101,7 +91,7 @@ def vuelve_info(pais):
             json[nombre] = menu
             numero_de_veces_recorrido += 1
         else:
-            return json, hasta
+            break
     return json, hasta
 
 
