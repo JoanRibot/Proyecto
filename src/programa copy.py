@@ -4,7 +4,6 @@ html = HTMLSession()
 page = html.get("https://joanribot.github.io/Proyecto/")
 page_text = page.text
 
-
 def get_next_target(page_text):
     start_link = page_text.find("<a href")
     if start_link == -1:
@@ -39,53 +38,6 @@ def entra_aqui(urls):
 
 htmls = entra_aqui(urls)
 
-<<<<<<< HEAD
-def buscaAtributos(htmlPais, atributo):
-    buscar = htmlPais.find(atributo)
-    if buscar==-1:
-        return None,0
-    desde = htmlPais.find('>', buscar)         
-    hasta = htmlPais.find('<', desde)               
-    encontrado = htmlPais[desde + 1 : hasta]
-    htmlPais=htmlPais[hasta:] 
-    return encontrado,htmlPais
-
-def menuCompleto(Atributos,html):
-    diccionario={}
-    resto=""
-    for i in Atributos:
-        nombre, resto= buscaAtributos(html,i)
-        if nombre==None:
-            return None, 0
-        diccionario[i]=nombre
-    return diccionario, resto
-
-def menusCompletos(html,Atributos):
-    resto=html
-    count=0
-    menusPagina={}
-    while True:
-        diccionario, resto=menuCompleto(Atributos,resto)
-        if diccionario ==None:
-            break
-        menusPagina[count]=diccionario
-        count+=1
-    return menusPagina
-
-
-def BuscaMenu(htmls):
-    Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
-    paises=["China", "España", "Tailandia", "Mexico", "Italia","Francia"]
-    count=0
-    jason={}
-    for i in htmls:
-        menus=menusCompletos(i,Atributos)
-        jason[paises[count]]=menus
-        count+=1
-    return jason
-            
-print(BuscaMenu(htmls))
-=======
 #def vamos_a_probar(htmls):
     #diccionario = {}
     #numero_menu = 0
@@ -99,12 +51,12 @@ print(BuscaMenu(htmls))
     #return diccionario
 
 def entra_en_cada_pais(htmls):
-    diccionario = {}
     for pais in htmls:
-        if pais:
-            find_menu(pais)
+        json_prueba = find_menu(pais)
+        if len(json_prueba) != 6:
+            continue
         else:
-            return diccionario
+            return json_prueba
 
 def find_menu(pais):
     paises = ["China", "España,", "Tailandia", "Mexico", "Italia", "Francia"]
@@ -115,26 +67,20 @@ def find_menu(pais):
         json, hasta = vuelve_info(pais)
         if json:
             diccionario_json[numero_menu] = json
-            for nombre_menu_pais in paises:              
+            for nombre_menu_pais in paises:
+                if json_prueba[nombre_menu_pais][4]["valoration"] == True:
+                    continue              
                 json_prueba[nombre_menu_pais] = diccionario_json
-                if len(json_prueba) != 6:
+                if len(json_prueba[nombre_menu_pais]) == 4:
+                    return json_prueba
+                while len(json_prueba) != 6:
+                    if len(json_prueba[nombre_menu_pais]) == 4:
+                        return json_prueba
                     numero_menu += 1
                     pais = pais[hasta:]
                     json, hasta = vuelve_info(pais)
                     diccionario_json[numero_menu] = json
                     json_prueba[nombre_menu_pais] = diccionario_json
-                    if len(json_prueba) != 6:
-                        numero_menu += 1
-                        pais = pais[hasta:]
-                        json, hasta = vuelve_info(pais)
-                        diccionario_json[numero_menu] = json
-                        json_prueba[nombre_menu_pais] = diccionario_json
-                        if len(json_prueba) != 6:
-                            numero_menu += 1
-                            pais = pais[hasta:]
-                            json, hasta = vuelve_info(pais)
-                            diccionario_json[numero_menu] = json
-                            json_prueba[nombre_menu_pais] = diccionario_json
                 else:
                     return json_prueba
         else:
@@ -157,9 +103,8 @@ def vuelve_info(pais):
             json[nombre] = menu
             numero_de_veces_recorrido += 1
         else:
-            return json, hasta + 1
-    return json, hasta + 1
+            return json, hasta
+    return json, hasta
 
 
 print(entra_en_cada_pais(htmls))
->>>>>>> 4a967913fc8987cb48ebc0e339d072d0f8693f79
