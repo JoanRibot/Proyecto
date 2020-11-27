@@ -74,4 +74,4 @@ def buscaAtributos(html,Buscados):
 
 print(buscaAtributos(page_text,Buscados))
 
-{1:}
+
