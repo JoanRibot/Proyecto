@@ -4,6 +4,7 @@ html = HTMLSession()
 page = html.get("https://joanribot.github.io/Proyecto/")
 page_text = page.text
 
+
 def get_next_target(page_text):
     start_link = page_text.find("<a href")
     if start_link == -1:
@@ -38,22 +39,48 @@ def entra_aqui(urls):
 
 htmls = entra_aqui(urls)
 
-def find_menu(htmls):
-    info = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
-    diccionario = {}
-    numero_menu = 0
-    for pais in htmls:
-        json = {}
-        numero_menu += 1
-        for nombre in info:
-            nombre_menu = pais.find(nombre)             
-            if nombre_menu == -1:                       
-                return menu, hasta
-            desde = pais.find('>', nombre_menu)         
-            hasta = pais.find('<', desde)               
-            menu = pais[desde + 1 : hasta]              
-            json[nombre] = menu
-        diccionario[numero_menu] = json  
-    return diccionario                    
+def buscaAtributos(htmlPais, atributo):
+    buscar = htmlPais.find(atributo)
+    if buscar==-1:
+        return None,0
+    desde = htmlPais.find('>', buscar)         
+    hasta = htmlPais.find('<', desde)               
+    encontrado = htmlPais[desde + 1 : hasta]
+    htmlPais=htmlPais[hasta:] 
+    return encontrado,htmlPais
 
-print(find_menu(htmls))
+def menuCompleto(Atributos,html):
+    diccionario={}
+    resto=""
+    for i in Atributos:
+        nombre, resto= buscaAtributos(html,i)
+        if nombre==None:
+            return None, 0
+        diccionario[i]=nombre
+    return diccionario, resto
+
+def menusCompletos(html,Atributos):
+    resto=html
+    count=0
+    menusPagina={}
+    while True:
+        diccionario, resto=menuCompleto(Atributos,resto)
+        if diccionario ==None:
+            break
+        menusPagina[count]=diccionario
+        count+=1
+    return menusPagina
+
+
+def BuscaMenu(htmls):
+    Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
+    paises=["China", "España", "Tailandia", "Mexico", "Italia","Francia"]
+    count=0
+    jason={}
+    for i in htmls:
+        menus=menusCompletos(i,Atributos)
+        jason[paises[count]]=menus
+        count+=1
+    return jason
+            
+print(BuscaMenu(htmls))
