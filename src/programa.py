@@ -39,7 +39,6 @@ def entra_aqui(urls):
 
 htmls = entra_aqui(urls)
 
-<<<<<<< HEAD
 def buscaAtributos(htmlPais, atributo):
     buscar = htmlPais.find(atributo)
     if buscar==-1:
@@ -85,81 +84,3 @@ def BuscaMenu(htmls):
     return jason
             
 print(BuscaMenu(htmls))
-=======
-#def vamos_a_probar(htmls):
-    #diccionario = {}
-    #numero_menu = 0
-    #while True:
-        #json, hasta = find_menu(htmls)
-        #numero_menu += 1
-        #if json:
-            #diccionario[numero_menu] = json
-            #json = {}
-            #htmls = htmls[hasta:]
-    #return diccionario
-
-def entra_en_cada_pais(htmls):
-    diccionario = {}
-    for pais in htmls:
-        if pais:
-            find_menu(pais)
-        else:
-            return diccionario
-
-def find_menu(pais):
-    paises = ["China", "España,", "Tailandia", "Mexico", "Italia", "Francia"]
-    diccionario_json = {}
-    json_prueba = {}
-    numero_menu = 1
-    while True:
-        json, hasta = vuelve_info(pais)
-        if json:
-            diccionario_json[numero_menu] = json
-            for nombre_menu_pais in paises:              
-                json_prueba[nombre_menu_pais] = diccionario_json
-                if len(json_prueba) != 6:
-                    numero_menu += 1
-                    pais = pais[hasta:]
-                    json, hasta = vuelve_info(pais)
-                    diccionario_json[numero_menu] = json
-                    json_prueba[nombre_menu_pais] = diccionario_json
-                    if len(json_prueba) != 6:
-                        numero_menu += 1
-                        pais = pais[hasta:]
-                        json, hasta = vuelve_info(pais)
-                        diccionario_json[numero_menu] = json
-                        json_prueba[nombre_menu_pais] = diccionario_json
-                        if len(json_prueba) != 6:
-                            numero_menu += 1
-                            pais = pais[hasta:]
-                            json, hasta = vuelve_info(pais)
-                            diccionario_json[numero_menu] = json
-                            json_prueba[nombre_menu_pais] = diccionario_json
-                else:
-                    return json_prueba
-        else:
-            return json_prueba
-    return json_prueba
-
-
-def vuelve_info(pais):
-    info = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
-    json = {}
-    numero_de_veces_recorrido = 1
-    for nombre in info:
-        if numero_de_veces_recorrido <= 8:    
-            nombre_menu = pais.find(nombre)             
-            if nombre_menu == -1:                       
-                return None, 0
-            desde = pais.find('>', nombre_menu)         
-            hasta = pais.find('<', desde)               
-            menu = pais[desde + 1 : hasta]
-            json[nombre] = menu
-            numero_de_veces_recorrido += 1
-        else:
-            return json, hasta + 1
-    return json, hasta + 1
-
-
-print(entra_en_cada_pais(htmls))
->>>>>>> 4a967913fc8987cb48ebc0e339d072d0f8693f79
