@@ -39,30 +39,32 @@ def entra_aqui(urls):
 
 htmls = entra_aqui(urls)
 
-def entra_en_cada_pais(htmls):
-    for pais in htmls:
-        json_prueba = find_menu(pais)
-        if len(json_prueba) != 6:
-            continue
-        else:
-            return json_prueba
+#def entra_en_cada_pais(htmls):
+    #for pais in htmls:
+        #return pais
 
-def find_menu(pais):
+def find_menu(htmls):
     paises = ["China", "España,", "Tailandia", "Mexico", "Italia", "Francia"]
     diccionario_json = {}
     json_prueba = {}
     numero_menu = 0
-    cuenta_cuantos = pais
+    numero_pais = 0
+    
     for nombre_menu_pais in paises:
         numero_menu = 0
+        pais = htmls[numero_pais]
+        cuenta_cuantos = pais
+        numero_pais += 1
+        if nombre_menu_pais in json_prueba:
+            break
         while len(json_prueba) <= 6:
             numero_menu += 1
             json, hasta = vuelve_info(pais)
-            pais = pais[hasta:]
             diccionario_json[numero_menu] = json
             json_prueba[nombre_menu_pais] = diccionario_json
             if len(json_prueba[nombre_menu_pais]) == cuenta_cuantos.count("valoration"):
                 break
+            pais = pais[hasta:]
     return json_prueba
 
 
@@ -85,4 +87,4 @@ def vuelve_info(pais):
     return json, hasta
 
 
-print(entra_en_cada_pais(htmls))
+print(find_menu(htmls))
