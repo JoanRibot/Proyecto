@@ -1,4 +1,4 @@
-from htmlString import htmls
+from src.htmlString import htmls
 
 def buscaAtributos(htmlPais, atributo):
     buscar = htmlPais.find(atributo)
@@ -10,7 +10,7 @@ def buscaAtributos(htmlPais, atributo):
     htmlPais = htmlPais[hasta:] 
     return encontrado, htmlPais
 
-def menuCompleto(Atributos,html):
+def menuCompleto(Atributos,htmlPais):
     diccionario={}
     resto=""
     for i in Atributos:
