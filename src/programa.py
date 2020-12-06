@@ -43,9 +43,9 @@ def menus_completos(html, Atributos):
         count += 1
     return menusPagina
 
+Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
 
-def busca_menu(htmls):
-    Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
+def busca_menu(htmls,Atributos):
     paises = ["China", "España", "Tailandia", "Mexico", "Italia", "Francia"]
     count = 0
     jason = {}
@@ -55,7 +55,7 @@ def busca_menu(htmls):
         count += 1
     return jason
 
-jason = busca_menu(htmls)
+jason = busca_menu(htmls,Atributos)
 print(jason)
 db = client.proyecto
 collection = db.diccionario
