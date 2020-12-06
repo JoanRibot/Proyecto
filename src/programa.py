@@ -1,4 +1,4 @@
-from htmlString import htmls
+from .htmlString import htmls
 
 def buscaAtributos(htmlPais, atributo):
     buscar = htmlPais.find(atributo)
@@ -43,5 +43,4 @@ def BuscaMenu(htmls):
         jason[paises[count]] = menus
         count += 1
     return jason
-            
-print(BuscaMenu(htmls))
+
