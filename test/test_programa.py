@@ -19,7 +19,7 @@ def test_menu_completo():
 
 @pytest.mark.menus_completos
 def test_menusCompletod():
-    assert menus_completos(htmlMedicamentosPequeño,tipoMedicamento)=={0:{"AINE":"Ibuprofeno","Diuretico":"Furosemida","Antihipertensivo":"Ramipril","Benzodiazepina":"Diazepam","Hipolipemiante":"Simvastatina","Antidepresivo":"Fluoxetina"}}
-    assert menus_completos(htmlMedicamentosGrande,tipoMedicamento)=={0:{"AINE":"Dexketoprofeno","Diuretico":"Torasemida","Antihipertensivo":"Enalapril","Benzodiazepina":"Lorazepam","Hipolipemiante":"Atorvastatina","Antidepresivo":"Duloxetina"},1:{"AINE":"Ibuprofeno","Diuretico":"Furosemida","Antihipertensivo":"Ramipril","Benzodiazepina":"Diazepam","Hipolipemiante":"Simvastatina","Antidepresivo":"Fluoxetina"},2:{"AINE":"Naproxeno","Diuretico":"Indapamida","Antihipertensivo":"Lisinopril","Benzodiazepina":"Alprazolam","Hipolipemiante":"Rosuvastatina","Antidepresivo":"Escitalopram"}}
+    assert menus_completos(htmlMedicamentosPequeño,tipoMedicamento)=={"menu1":{"AINE":"Ibuprofeno","Diuretico":"Furosemida","Antihipertensivo":"Ramipril","Benzodiazepina":"Diazepam","Hipolipemiante":"Simvastatina","Antidepresivo":"Fluoxetina"}}
+    assert menus_completos(htmlMedicamentosGrande,tipoMedicamento)=={"menu1":{"AINE":"Dexketoprofeno","Diuretico":"Torasemida","Antihipertensivo":"Enalapril","Benzodiazepina":"Lorazepam","Hipolipemiante":"Atorvastatina","Antidepresivo":"Duloxetina"},"menu2":{"AINE":"Ibuprofeno","Diuretico":"Furosemida","Antihipertensivo":"Ramipril","Benzodiazepina":"Diazepam","Hipolipemiante":"Simvastatina","Antidepresivo":"Fluoxetina"},"menu3":{"AINE":"Naproxeno","Diuretico":"Indapamida","Antihipertensivo":"Lisinopril","Benzodiazepina":"Alprazolam","Hipolipemiante":"Rosuvastatina","Antidepresivo":"Escitalopram"}}
     assert menus_completos(htmlMedicamentosGrande,["nada","Aine","Antihipertensivo"])=={}
     assert menus_completos('<p class="mamifero">mapache</p>< class="ave>loro</p>',tipoMedicamento)=={}
