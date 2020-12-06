@@ -1,5 +1,6 @@
 from requests_html import HTMLSession
 
+# hacer try/except
 html = HTMLSession()
 page = html.get("https://joanribot.github.io/Proyecto/")
 page_text = page.text
@@ -38,7 +39,7 @@ def all_links(page_text):
 
 urls = all_links(page_text)
 
-def htmlTodo(urls):
+def html_todo(urls):
     html_links = []
     for link in urls:
         link = HTMLSession().get(link)
@@ -46,5 +47,5 @@ def htmlTodo(urls):
         html_links.append(link_text)
     return html_links
 
-htmls = htmlTodo(urls)
+htmls = html_todo(urls)
 

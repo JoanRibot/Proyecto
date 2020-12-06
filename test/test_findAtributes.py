@@ -1,7 +1,5 @@
-from src.programa import buscaAtributos
+from src.programa import busca_atributo
+import pytest
 
-atributo="tiempo"
-html="<body><p class='sol'>hace sol</p>"
-
-assert buscaAtributos(html, atributo)=="hace sol"
-
+def test_busca_atributos():
+    busca_atributo("tiempo","<body><p class='tiempo'>hace sol</p>") == "hace sol"
