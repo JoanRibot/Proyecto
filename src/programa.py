@@ -33,14 +33,13 @@ def menu_completo(Atributos,html):
 
 def menus_completos(html, Atributos):
     resto = html
-    numero_menu = ["primerMenu", "segundoMenu", "tercerMenu", "cuartoMenu"]
-    count = 0
+    count = 1
     menusPagina = {}
     while True:
         diccionario, resto = menu_completo(Atributos, resto)
         if diccionario == None:
             break
-        menusPagina[numero_menu[count]] = diccionario
+        menusPagina["menu" + str(count)] = diccionario
         count += 1
     return menusPagina
 
@@ -58,7 +57,6 @@ def busca_menu(htmls):
 
 jason = busca_menu(htmls)
 print(jason)
-
 db = client.proyecto
 collection = db.diccionario
 collection.drop()
