@@ -22,8 +22,8 @@ def busca_atributo(htmlPais, atributo):
     return encontrado, htmlPais
 
 def menu_completo(Atributos,html):
-    diccionario={}
-    resto=""
+    diccionario = {}
+    resto = ""
     for i in Atributos:
         nombre, resto = busca_atributo(html, i)
         if nombre == None:
@@ -33,13 +33,14 @@ def menu_completo(Atributos,html):
 
 def menus_completos(html, Atributos):
     resto = html
+    numero_menu = ["primerMenu", "segundoMenu", "tercerMenu", "cuartoMenu"]
     count = 0
     menusPagina = {}
     while True:
         diccionario, resto = menu_completo(Atributos, resto)
         if diccionario == None:
             break
-        menusPagina[count] = diccionario
+        menusPagina[numero_menu[count]] = diccionario
         count += 1
     return menusPagina
 
@@ -58,9 +59,12 @@ def busca_menu(htmls):
 jason = busca_menu(htmls)
 print(jason)
 
-try:
-    base_datos = client.proyecto
-    diccionario_json = base_datos.diccionario
-    result = diccionario_json.insert_one(jason)
+db = client.proyecto
+collection = db.diccionario
+collection.drop()
+
+try:    
+    collection.insert_one(jason)
+    print("Successfully added")
 except Exception as error:
-    print("error saving data")
+    print("Error saving data")
