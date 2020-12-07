@@ -1,6 +1,17 @@
-from .htmlString import htmls
+from html_string import htmls
+import pymongo
 
-def buscaAtributos(htmlPais, atributo):
+try:
+    uri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.8i6ry.mongodb.net/test"
+    client = pymongo.MongoClient(uri)
+    client.server_info()
+    print ("Conectado al servidor %s")
+except pymongo.errors.ServerSelectionTimeoutError as error:
+    print( "Error al conectar al servidor %s") % error
+except pymongo.errors.CollectionInvalid as error:
+    print("could not connect to MongoDB %s") % error
+
+def busca_atributo(htmlPais, atributo):
     buscar = htmlPais.find(atributo)
     if buscar == -1:
         return None, 0
@@ -10,37 +21,49 @@ def buscaAtributos(htmlPais, atributo):
     htmlPais = htmlPais[hasta:] 
     return encontrado, htmlPais
 
-def menuCompleto(Atributos,htmlPais):
-    diccionario={}
-    resto=""
+def menu_completo(Atributos,html):
+    diccionario = {}
+    resto = ""
     for i in Atributos:
-        nombre, resto = buscaAtributos(htmlPais, i)
+        nombre, resto = busca_atributo(html, i)
         if nombre == None:
             return None, 0
         diccionario[i] = nombre
     return diccionario, resto
 
-def menusCompletos(htmlPais, Atributos):
-    resto = htmlPais
-    count = 0
+def menus_completos(html, Atributos):
+    resto = html
+    count = 1
     menusPagina = {}
     while True:
-        diccionario, resto = menuCompleto(Atributos, resto)
+        diccionario, resto = menu_completo(Atributos, resto)
         if diccionario == None:
             break
-        menusPagina[count] = diccionario
+        menusPagina["menu" + str(count)] = diccionario
         count += 1
     return menusPagina
 
+Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
 
-def BuscaMenu(htmls):
-    Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
-    paises = ["China", "España", "Tailandia", "Mexico", "Italia","Francia"]
+def busca_menu(htmls,Atributos):
     count = 0
     jason = {}
     for i in htmls:
-        menus = menusCompletos(i,Atributos)
-        jason[paises[count]] = menus
+        pais,resto = busca_atributo(i, "lugar")
+        menus = menus_completos(resto,Atributos)
+        jason[pais] = menus
         count += 1
     return jason
+
+jason = busca_menu(htmls,Atributos)
+print(jason)
+db = client.proyecto
+collection = db.diccionario
+collection.drop()
+
+try:    
+    collection.insert_one(jason)
+    print("Successfully added")
+except Exception as error:
+    print("Error saving data")
 

@@ -1,0 +1,60 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.textoprincipal{
+    font-size: 25px;
+}
+
+#menuHorizontal ul li{
+    display: inline;
+    padding: 17px 40px;
+    margin:1px; 
+    background-image:url(./imagenes/fondos/fondomarge.jpeg);
+}
+#menuHorizontal ul li:hover{
+    background-image:url(./imagenes/fondos/fondodegradado.jpeg);
+    cursor: pointer; 
+}
+
+.tablamenus tr td{
+    background-color: white;
+    border-collapse: collapse;
+    padding: 38px;
+}
+
+.tablamenus{
+    margin: auto;
+}
+
+.tablamenus2{
+    border-collapse: collapse;
+}
+
+.menus{   /* Con este estilo quitamos los puntos que salen delante de las etiquetas de listas */
+    list-style:none;
+}
+
+.quitar{   /* Con este estilo quitamos los puntos que salen delante de las etiquetas de listas */
+    list-style:none;
+}
+
+div.textoprincipal {
+    width: 50%;
+    margin: 20px auto;
+    background-color: rgb(14, 131, 59);
+    color: #fff;
+    padding: 15px;
+  }
+  
+div.textoprincipal img.fotoizquierda {
+    float: left;
+    margin-right: 15px;
+    width: 30%;
+  }
+
+div.textoprincipal img.fotoderecha {
+    float: right;
+    margin-left: 15px;
+    width: 30%;
+  }
