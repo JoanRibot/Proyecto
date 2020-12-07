@@ -10,10 +10,10 @@
     display: inline;
     padding: 17px 40px;
     margin:1px; 
-    background-image:url(imagenes/fondos/fondomarge.jpeg);
+    background-image:url(./imagenes/fondos/fondomarge.jpeg);
 }
 #menuHorizontal ul li:hover{
-    background-image:url(imagenes/fondos/fondodegradado.jpeg);
+    background-image:url(./imagenes/fondos/fondodegradado.jpeg);
     cursor: pointer; 
 }
 
