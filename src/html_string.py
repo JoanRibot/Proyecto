@@ -1,9 +1,13 @@
 from requests_html import HTMLSession
 
+principal_link="https://joanribot.github.io/Proyecto"
 # hacer try/except
-html = HTMLSession()
-page = html.get("https://joanribot.github.io/Proyecto/")
-page_text = page.text
+def made_text(principal_link):
+    html=HTMLSession()
+    page=html.get(principal_link)
+    page_html=page.text
+    return page_html
+
 
 
 def get_next_target(page_text):
@@ -34,10 +38,9 @@ def all_links(page_text):
             break
 
     # Postcondición 
-    assert lista == ['https://joanribot.github.io/Proyecto/Menus/china.html', 'https://joanribot.github.io/Proyecto/Menus/spain.html', 'https://joanribot.github.io/Proyecto/Menus/tailandesa.html', 'https://joanribot.github.io/Proyecto/Menus/mexicana.html', 'https://joanribot.github.io/Proyecto/Menus/italiana.html', 'https://joanribot.github.io/Proyecto/Menus/francesa.html']
     return lista
 
-urls = all_links(page_text)
+urls = all_links(made_text(principal_link))
 
 def html_todo(urls):
     html_links = []
@@ -47,5 +50,17 @@ def html_todo(urls):
         html_links.append(link_text)
     return html_links
 
-htmls = html_todo(urls)
 
+def crawl_web(seed):
+    tocrawl = [seed]
+    crawled =[]
+    while tocrawl:
+        page = tocrawl.pop()
+        if page not in crawled:
+            for i in all_links(made_text(page)):
+                if i not in tocrawl:
+                    tocrawl.append(i)
+            crawled.append(page)
+    return crawled
+links=crawl_web(principal_link)
+htmls = html_todo(links)
