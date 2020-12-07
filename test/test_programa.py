@@ -1,5 +1,7 @@
 from src.programa import busca_atributo, menu_completo, menus_completos, busca_menu
-from .htmlDePrueba import  tipoMedicamento, htmlMedicamentosPequeño, htmlMedicamentosGrande, htmlsAnimales
+from .htmlDePrueba import  tipoMedicamento, htmlMedicamentosPequeño, htmlMedicamentosGrande, htmlsAnimales,page_prueba
+from src.html_string import get_next_target
+
 
 import pytest
 
@@ -27,3 +29,4 @@ def test_menus_completos():
 @pytest.mark.busca_menu
 def test_busca_menus():
     assert busca_menu(htmlsAnimales,["primero","segundo","tercero"])=={"mamifero":{"menu1":{"primero":"Mono","segundo":"Rata","tercero":"ornitorrinco"},"menu2":{"primero":"Ardilla","segundo":"Ratón","tercero":"Cabra"}},"ave":{"menu1":{"primero":"Loro","segundo":"Avestruz","tercero":"Gallina"},"menu2":{"primero":"Gaviota","segundo":"Paloma","tercero":"Colibrí"}},"Bicho":{"menu1":{"primero":"hormiga","segundo":"mosquito","tercero":"escarabajo"},"menu2":{"primero":"dragonfly","segundo":"mosca","tercero":"abeja"}}}
+

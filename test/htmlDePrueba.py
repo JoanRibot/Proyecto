@@ -1,3 +1,8 @@
+from requests_html import HTMLSession
+
+html = HTMLSession()
+pagina = html.get("https://joanribot.github.io/Sandbox0/index.html")
+page_prueba = pagina.text
 
 tipoMedicamento=["AINE", "Diuretico", "Antihipertensivo", "Benzodiazepina", "Hipolipemiante", "Antidepresivo"]
 htmlMedicamentosPequeño='<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body><p class="AINE">Ibuprofeno</p><p class="Diuretico">Furosemida</p><p class="Antihipertensivo">Ramipril</p><p class="Benzodiazepina">Diazepam</p><p class="Hipolipemiante">Simvastatina</p><p class="Antidepresivo">Fluoxetina</p></html>'
