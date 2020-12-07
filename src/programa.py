@@ -1,4 +1,4 @@
-from .html_string import htmls
+from html_string import htmls
 import pymongo
 
 try:
