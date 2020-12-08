@@ -23,7 +23,11 @@ y toda esta información la guarda en un diccionario bien estructurado que final
 Nosotros hemos usado dos librerías, Requests_html para conectarse al sitio web y después convertir los html a strings para poder examinarlos y sacar la información
 Y también hemos usado, Pymongo, para conectarse a la base de datos y guardar la información extraida en ella.
 
-## ¿Cuánto tiempo hemos estado?
+## Metodología de desarrollo
+
+...
+
+## ¿Cuánto tiempo hemos estado, posibles mejoras y principales dificultades encontradas?
 
 Pues primero de todo, tenemos que decir que no tenemos todas las horas contabilizadas, porque nos enteramos tarde que teníamos que usar clockify, entonces al enterarnos lo empezamos a usar.
 
@@ -31,6 +35,10 @@ Hemos hecho un total de X horas de proyecto, donde la mayoría de las horas ha s
 La parte de la creación del sitio web, no estuvimos mucho tiempo, porque nuestro objetivo era sacar el código antes de tener un sitio web bonito o tal, le dimos mucha preferencia al código.
 Estuvimos varias horas para entender como funcionaba GitFlow y todo el tema de las ramas.
 El programa, como es lógico, es lo que más tiempo nos ha llevado ya que tampoco somos unos cracks programando, pero gracias a informarse, ver la documentación del panel y demás lo hemos conseguido sacar.
+
+Posiblemente se podría mejorar alguna función y los nombres de las variables.
+
+A lo largo del proyecto hemos tenido varias dificultades, como no saber si se podían importar librerías e intentar hacer las cosas sin librerías, no saber usar correctamente el gitflow y tener errores con el entorno virtual porque uno tiene linux y otro microsoft.
 
 ## Experiencia sobre el proyecto - Carlos
 
