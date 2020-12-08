@@ -1,16 +1,28 @@
+from typing import Collection
 from html_string import htmls
 
+Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
+
 def busca_atributo(htmlPais, atributo):
+    assert isinstance(htmlPais, str)
+    assert isinstance(atributo, str)
+
     buscar = htmlPais.find(atributo)
     if buscar == -1:
         return None, 0
     desde = htmlPais.find('>', buscar)         
     hasta = htmlPais.find('<', desde)               
     encontrado = htmlPais[desde + 1 : hasta]
-    htmlPais = htmlPais[hasta:] 
+    htmlPais = htmlPais[hasta:]
+    
+    assert isinstance(encontrado, str) 
+    assert isinstance(htmlPais, str) 
     return encontrado, htmlPais
 
 def menu_completo(Atributos,html):
+    assert isinstance(Atributos, list)
+    assert isinstance(html, str)
+
     diccionario = {}
     resto = ""
     for i in Atributos:
@@ -18,9 +30,14 @@ def menu_completo(Atributos,html):
         if nombre == None:
             return None, 0
         diccionario[i] = nombre
+
+    assert isinstance(diccionario, Collection)
     return diccionario, resto
 
 def menus_completos(html, Atributos):
+    assert isinstance(Atributos, list)
+    assert isinstance(html, str)
+
     resto = html
     count = 1
     menusPagina = {}
@@ -30,11 +47,15 @@ def menus_completos(html, Atributos):
             break
         menusPagina["menu" + str(count)] = diccionario
         count += 1
+
+    assert isinstance(menusPagina, Collection)
     return menusPagina
 
-Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
 
 def busca_menu(htmls,Atributos):
+    assert isinstance(Atributos, list)
+    assert isinstance(htmls, list)
+    
     count = 0
     json = {}
     for i in htmls:
@@ -44,6 +65,9 @@ def busca_menu(htmls,Atributos):
         menus = menus_completos(resto,Atributos)
         json[pais] = menus
         count += 1
+
+    assert isinstance(json,Collection)
     return json
 
 json = busca_menu(htmls,Atributos)
+print(json)

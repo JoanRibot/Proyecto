@@ -6,6 +6,7 @@ principal_link="https://joanribot.github.io/Proyecto"
 def get_next_target(page_text):
     # Precondición
     assert isinstance(page_text, str)
+    
     url=""
     start_link = page_text.find("<a href")
     if start_link == -1:
@@ -16,7 +17,6 @@ def get_next_target(page_text):
 
     assert isinstance(url, str)
     assert isinstance(end_quote, int)
-
     return url, end_quote
 
 def all_links(page_text):
@@ -30,20 +30,24 @@ def all_links(page_text):
         else:
             break
 
-    # Postcondición 
+    assert isinstance(lista, list) 
     return lista
 
 def html_todo(urls):
     assert isinstance(urls, list) 
+
     html_links = []
     for link in urls:
         link_text=made_text(link)
         html_links.append(link_text)
+
+    assert isinstance(html_links, list)  
     return html_links
 
 
 def crawl_web(seed):
     assert isinstance(seed, str)
+
     tocrawl = [seed]
     crawled =[]
     while tocrawl:
@@ -53,6 +57,8 @@ def crawl_web(seed):
                 if i not in tocrawl:
                     tocrawl.append(i)
             crawled.append(page)
+
+    assert isinstance(crawled, list) 
     return crawled
 
 
