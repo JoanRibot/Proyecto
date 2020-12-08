@@ -50,6 +50,8 @@ def busca_menu(htmls,Atributos):
     jason = {}
     for i in htmls:
         pais,resto = busca_atributo(i, "lugar")
+        if pais == None:
+            continue
         menus = menus_completos(resto,Atributos)
         jason[pais] = menus
         count += 1
