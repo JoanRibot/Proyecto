@@ -11,10 +11,9 @@ def made_text(principal_link):
 
 
 def get_next_target(page_text):
-
     # Precondición
     assert isinstance(page_text, str)
-
+    url=""
     start_link = page_text.find("<a href")
     if start_link == -1:
         return None, 0
@@ -40,8 +39,6 @@ def all_links(page_text):
     # Postcondición 
     return lista
 
-urls = all_links(made_text(principal_link))
-
 def html_todo(urls):
     html_links = []
     for link in urls:
@@ -62,5 +59,8 @@ def crawl_web(seed):
                     tocrawl.append(i)
             crawled.append(page)
     return crawled
+
+
 links=crawl_web(principal_link)
 htmls = html_todo(links)
+print(crawl_web("https://joanribot.github.io/Sandbox0"))
