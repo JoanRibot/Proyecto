@@ -1,13 +1,6 @@
-from requests_html import HTMLSession
+from domain.descarga_html import made_text
 
 principal_link="https://joanribot.github.io/Proyecto"
-# hacer try/except
-def made_text(principal_link):
-    html=HTMLSession()
-    page=html.get(principal_link)
-    page_html=page.text
-    return page_html
-
 
 
 def get_next_target(page_text):
@@ -42,8 +35,7 @@ def all_links(page_text):
 def html_todo(urls):
     html_links = []
     for link in urls:
-        link = HTMLSession().get(link)
-        link_text = link.text
+        link_text=made_text(link)
         html_links.append(link_text)
     return html_links
 

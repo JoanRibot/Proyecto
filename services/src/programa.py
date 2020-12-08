@@ -1,4 +1,4 @@
-from .html_string import htmls
+from html_string import htmls
 import pymongo
 
 try:
@@ -47,25 +47,25 @@ Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "pr
 
 def busca_menu(htmls,Atributos):
     count = 0
-    jason = {}
+    json = {}
     for i in htmls:
         pais,resto = busca_atributo(i, "lugar")
         if pais == None:
             continue
         menus = menus_completos(resto,Atributos)
-        jason[pais] = menus
+        json[pais] = menus
         count += 1
-    return jason
+    return json
 
-jason = busca_menu(htmls,Atributos)
+json = busca_menu(htmls,Atributos)
 db = client.proyecto
 collection = db.diccionario
 collection.drop()
 
 try:    
-    collection.insert_one(jason)
+    collection.insert_one(json)
     print("Successfully added")
 except Exception as error:
     print("Error saving data")
 
-    
+print(json)
