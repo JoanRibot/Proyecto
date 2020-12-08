@@ -63,4 +63,3 @@ def crawl_web(seed):
 
 links=crawl_web(principal_link)
 htmls = html_todo(links)
-print(crawl_web("https://joanribot.github.io/Sandbox0"))
