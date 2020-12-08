@@ -1,11 +1,11 @@
-from src.html_string import get_next_target, all_links, crawl_web
+from services.src.html_string import get_next_target, all_links, crawl_web
 from .htmlDePrueba import page_prueba, page_prueba2, page_prueba3
 
 import pytest
 
 @pytest.mark.get_next_target
 def test_get_next_target():
-    assert get_next_target(page_prueba)==('"https://joanribot.github.io/Sandbox0/enlace1.html"',248)
+    assert get_next_target(page_prueba)==('"https://joanribot.github.io/Sandbox0/enlace1"',243)
     assert get_next_target(page_prueba2)==('"https://joanribot.github.io/Sandbox0"',292)
     assert get_next_target(page_prueba3)==('"https://joanribot.github.io/Sandbox0"',911)
 

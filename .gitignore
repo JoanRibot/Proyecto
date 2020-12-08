@@ -1,7 +1,7 @@
 .idea
 .pytest_cache
 .vscode
-vnenv
+venv
 __pycache__
 gitflow-Project
 debug.log
