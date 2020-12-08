@@ -1,4 +1,4 @@
-from src.html_string import htmls
+from .html_string import htmls
 import pymongo
 
 try:
@@ -58,7 +58,6 @@ def busca_menu(htmls,Atributos):
     return jason
 
 jason = busca_menu(htmls,Atributos)
-print(jason)
 db = client.proyecto
 collection = db.diccionario
 collection.drop()

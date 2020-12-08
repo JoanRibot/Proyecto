@@ -1,4 +1,4 @@
-from src.html_string import made_text
+from services.src.html_string import made_text
 
 page_prueba=made_text("https://joanribot.github.io/Sandbox0")
 page_prueba2=made_text("https://joanribot.github.io/Sandbox0/enlace3")
