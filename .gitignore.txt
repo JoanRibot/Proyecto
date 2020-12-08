@@ -1,0 +1,7 @@
+.idea
+.pytest_cache
+.vscode
+vnenv
+__pycache__
+gitflow-Project
+debug.log
