@@ -9,3 +9,4 @@ def made_text(principal_link):
         return page_html
     except:
         print("No se pudo obtener el html")
+
