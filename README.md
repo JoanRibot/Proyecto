@@ -44,6 +44,7 @@ Quitando las horas que no tenemos contabilizadas, que sobretodo fueron de lengua
 Posiblemente se podría mejorar alguna función y los nombres de las variables.
 
 A lo largo del proyecto hemos tenido varias dificultades, como no saber si se podían importar librerías e intentar hacer las cosas sin librerías, no saber usar correctamente el gitflow y tener errores con el entorno virtual porque uno tiene linux y otro microsoft.
+Y la dificultad que más tiempo nos ha llevado ha sido que cuando importamos una función de un módulo a otro. Cuando queríamos pasar los casos test, teniamos que poner en la ruta un . y cuando queríamos ejecutar el programa teníamos que quitarlo.
 
 ## Experiencia sobre el proyecto - Carlos
 
