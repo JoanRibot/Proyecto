@@ -1,4 +1,4 @@
-from html_string import htmls
+from .html_string import htmls
 import pymongo
 
 try:
@@ -50,13 +50,14 @@ def busca_menu(htmls,Atributos):
     jason = {}
     for i in htmls:
         pais,resto = busca_atributo(i, "lugar")
+        if pais == None:
+            continue
         menus = menus_completos(resto,Atributos)
         jason[pais] = menus
         count += 1
     return jason
 
 jason = busca_menu(htmls,Atributos)
-print(jason)
 db = client.proyecto
 collection = db.diccionario
 collection.drop()
@@ -67,3 +68,4 @@ try:
 except Exception as error:
     print("Error saving data")
 
+    
