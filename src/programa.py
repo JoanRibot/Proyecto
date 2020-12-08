@@ -1,4 +1,4 @@
-from .html_string import htmls
+from src.html_string import htmls
 import pymongo
 
 try:
@@ -67,3 +67,4 @@ try:
 except Exception as error:
     print("Error saving data")
 
+    
