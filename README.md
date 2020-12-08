@@ -25,16 +25,21 @@ Y también hemos usado, Pymongo, para conectarse a la base de datos y guardar la
 
 ## Metodología de desarrollo
 
-...
+En este proyecto hemos usado el modelo en V, con este modelo es posible la interacción entre el desarrollo y la validación, mientras ibamos escribiendo el código, ibamos mirando que funcionara como nosotros queríamos, con debbuging y los casos test. 
+Esto ha hecho que sepamos en todo momento el fallo que teníamos cuando apliabamos código.
 
-## ¿Cuánto tiempo hemos estado, posibles mejoras y principales dificultades encontradas?
+## ¿Cuánto tiempo hemos estado (Clockify), posibles mejoras y principales dificultades encontradas?
 
 Pues primero de todo, tenemos que decir que no tenemos todas las horas contabilizadas, porque nos enteramos tarde que teníamos que usar clockify, entonces al enterarnos lo empezamos a usar.
 
-Hemos hecho un total de X horas de proyecto, donde la mayoría de las horas ha sido haciendo el programa.
+Hemos hecho un total de 66 horas de proyecto, donde la mayoría de las horas ha sido haciendo el programa.
 La parte de la creación del sitio web, no estuvimos mucho tiempo, porque nuestro objetivo era sacar el código antes de tener un sitio web bonito o tal, le dimos mucha preferencia al código.
 Estuvimos varias horas para entender como funcionaba GitFlow y todo el tema de las ramas.
 El programa, como es lógico, es lo que más tiempo nos ha llevado ya que tampoco somos unos cracks programando, pero gracias a informarse, ver la documentación del panel y demás lo hemos conseguido sacar.
+
+Quitando las horas que no tenemos contabilizadas, que sobretodo fueron de lenguaje de marcas, este ha sido el total de horas utilizadas en el proyecto
+
+![Clockify](./images/horasclocki.jpg)
 
 Posiblemente se podría mejorar alguna función y los nombres de las variables.
 
