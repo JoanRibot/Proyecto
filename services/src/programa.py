@@ -46,12 +46,14 @@ def menus_completos(html, Atributos):
 Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
 
 def busca_menu(htmls,Atributos):
-    paises = ["China", "España", "Tailandia", "Mexico", "Italia", "Francia"]
     count = 0
     jason = {}
     for i in htmls:
-        menus = menus_completos(i,Atributos)
-        jason[paises[count]] = menus
+        pais,resto = busca_atributo(i, "lugar")
+        if pais == None:
+            continue
+        menus = menus_completos(resto,Atributos)
+        jason[pais] = menus
         count += 1
     return jason
 
