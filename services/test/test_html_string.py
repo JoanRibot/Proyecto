@@ -1,4 +1,4 @@
-from services.src.html_string import get_next_target, all_links, crawl_web
+from services.src.html_string  import get_next_target, all_links, crawl_web
 from .htmlDePrueba import page_prueba, page_prueba2, page_prueba3
 
 import pytest
