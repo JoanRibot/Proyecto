@@ -1,5 +1,9 @@
+<<<<<<< HEAD
+from .html_string import htmls
+=======
 from typing import Collection
 from html_string import htmls
+>>>>>>> 5ba1e6efacb53c23ba4d6996411bb6a59d7a0e82
 
 Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
 
