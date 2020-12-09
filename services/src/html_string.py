@@ -6,13 +6,8 @@ principal_link = "https://joanribot.github.io/Proyecto"
 def get_next_target(page_text):
 
     assert isinstance(page_text, str)
-<<<<<<< HEAD
     
     url=""
-=======
-
-    url = ""
->>>>>>> feature/código
     start_link = page_text.find("<a href")
     if start_link == -1:
         return None, 0

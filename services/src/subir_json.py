@@ -2,7 +2,7 @@ import pymongo
 from .programa import json
 
 try:
-    uri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.8i6ry.mongodb.net/test"
+    uri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.wiedk.mongodb.net/test"
     client = pymongo.MongoClient(uri)
     client.server_info()
     print ("Conectado al servidor")
@@ -20,4 +20,3 @@ try:
     print("Successfully added")
 except Exception as error:
     print("Error saving data")
-
