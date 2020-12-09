@@ -53,3 +53,8 @@ He aprendido mucho sobre programación en este proyecto, me he buscado la vida e
 que yo no sabía la otra persona a lo mejor me podía ayudar y también tengo que dar las gracias a los demás, que siempre que se les ha pedido alguna duda, han intentado ayudar.
 Este proyecto puede que esté mejor o peor, pero yo me siento bastante satisfecho de haber conseguido el objetivo, de haber aprendido y saber que me falta por aprender mucho más.
 
+
+
+
+
+
