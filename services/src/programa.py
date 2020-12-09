@@ -1,4 +1,4 @@
-from html_string import htmls
+from .html_string import htmls
 
 def busca_atributo(htmlPais, atributo):
     buscar = htmlPais.find(atributo)
