@@ -1,12 +1,13 @@
 from .descarga_html import made_text
 
-principal_link="https://joanribot.github.io/Proyecto"
+principal_link = "https://joanribot.github.io/Proyecto"
 
 
 def get_next_target(page_text):
-    # Precondición
+
     assert isinstance(page_text, str)
-    url=""
+
+    url = ""
     start_link = page_text.find("<a href")
     if start_link == -1:
         return None, 0
@@ -37,7 +38,7 @@ def html_todo(urls):
     assert isinstance(urls, list) 
     html_links = []
     for link in urls:
-        link_text=made_text(link)
+        link_text = made_text(link)
         html_links.append(link_text)
     return html_links
 
@@ -45,7 +46,7 @@ def html_todo(urls):
 def crawl_web(seed):
     assert isinstance(seed, str)
     tocrawl = [seed]
-    crawled =[]
+    crawled = []
     while tocrawl:
         page = tocrawl.pop()
         if page not in crawled:
