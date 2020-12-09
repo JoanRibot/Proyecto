@@ -23,14 +23,28 @@ y toda esta información la guarda en un diccionario bien estructurado que final
 Nosotros hemos usado dos librerías, Requests_html para conectarse al sitio web y después convertir los html a strings para poder examinarlos y sacar la información
 Y también hemos usado, Pymongo, para conectarse a la base de datos y guardar la información extraida en ella.
 
-## ¿Cuánto tiempo hemos estado?
+## Metodología de desarrollo
+
+En este proyecto hemos usado el modelo en V, con este modelo es posible la interacción entre el desarrollo y la validación, mientras ibamos escribiendo el código, ibamos mirando que funcionara como nosotros queríamos, con debbuging y los casos test. 
+Esto ha hecho que sepamos en todo momento el fallo que teníamos cuando apliabamos código.
+
+## ¿Cuánto tiempo hemos estado (Clockify), posibles mejoras y principales dificultades encontradas?
 
 Pues primero de todo, tenemos que decir que no tenemos todas las horas contabilizadas, porque nos enteramos tarde que teníamos que usar clockify, entonces al enterarnos lo empezamos a usar.
 
-Hemos hecho un total de X horas de proyecto, donde la mayoría de las horas ha sido haciendo el programa.
+Hemos hecho un total de 66 horas de proyecto, donde la mayoría de las horas ha sido haciendo el programa.
 La parte de la creación del sitio web, no estuvimos mucho tiempo, porque nuestro objetivo era sacar el código antes de tener un sitio web bonito o tal, le dimos mucha preferencia al código.
 Estuvimos varias horas para entender como funcionaba GitFlow y todo el tema de las ramas.
 El programa, como es lógico, es lo que más tiempo nos ha llevado ya que tampoco somos unos cracks programando, pero gracias a informarse, ver la documentación del panel y demás lo hemos conseguido sacar.
+
+Quitando las horas que no tenemos contabilizadas, que sobretodo fueron de lenguaje de marcas, este ha sido el total de horas utilizadas en el proyecto
+
+![Clockify](./images/horasclocki.jpg)
+
+Posiblemente se podría mejorar alguna función y los nombres de las variables.
+
+A lo largo del proyecto hemos tenido varias dificultades, como no saber si se podían importar librerías e intentar hacer las cosas sin librerías, no saber usar correctamente el gitflow y tener errores con el entorno virtual porque uno tiene linux y otro microsoft.
+Y la dificultad que más tiempo nos ha llevado ha sido que cuando importamos una función de un módulo a otro. Cuando queríamos pasar los casos test, teniamos que poner en la ruta un . y cuando queríamos ejecutar el programa teníamos que quitarlo.
 
 ## Experiencia sobre el proyecto - Carlos
 
@@ -39,3 +53,7 @@ He aprendido mucho sobre programación en este proyecto, me he buscado la vida e
 que yo no sabía la otra persona a lo mejor me podía ayudar y también tengo que dar las gracias a los demás, que siempre que se les ha pedido alguna duda, han intentado ayudar.
 Este proyecto puede que esté mejor o peor, pero yo me siento bastante satisfecho de haber conseguido el objetivo, de haber aprendido y saber que me falta por aprender mucho más.
 
+## Experiencia sobre el proyecto - Joan
+Este proyecto me ha parecido interesante, también he aprendido mucho sobre programación en este proyecto, me he vuelto loco con el debugging buscando errores, y eso también me ha ayudado a entender mejor como funciona y a encontrar errores más rápido.
+Sobre hacerlo en equipo, pienso como Carlos, a la hora de resolver problemas es muy útil tener a otra persona que pueda resolverlos o explicartelos, y después estaban los compañeros, que siempre que te podían resolver algo, lo hacían.
+Aunque como dice carlos, este proyecto pueda estar peor o mejor, al final, aunque no sea algo perfecto, hemos aprendido mucho de él, y nos hemos podido dar cuenta de las carencias que tenemos y que tendré en cuenta de cara a futuros proyectos que pueda realizar.
