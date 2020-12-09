@@ -9,7 +9,7 @@ def subir_jason_bd():
     except pymongo.errors.ServerSelectionTimeoutError as error:
         print( "Error al conectar al servidor") % error
     except pymongo.errors.CollectionInvalid as error:
-        print("could not connect to MongoDB") % error
+        print("No se pudo conectar a MongoCompass") % error
 
     db = client.proyecto
     collection = db.diccionario
@@ -17,6 +17,6 @@ def subir_jason_bd():
 
     try:    
         collection.insert_one(json)
-        print("Successfully added")
+        print("Añadido correctamente")
     except Exception as error:
-        print("Error saving data")
+        print("Hubo un error al añadir el archivo")
