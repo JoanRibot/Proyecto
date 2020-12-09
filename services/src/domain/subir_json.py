@@ -1,5 +1,5 @@
 import pymongo
-from .programa import json
+from ..programa import json
 
 try:
     uri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.wiedk.mongodb.net/test"

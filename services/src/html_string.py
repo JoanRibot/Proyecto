@@ -1,4 +1,4 @@
-from .descarga_html import made_text
+from .domain.descarga_html import made_text
 
 principal_link = "https://joanribot.github.io/Proyecto"
 
