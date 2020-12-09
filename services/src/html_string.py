@@ -1,4 +1,4 @@
-from domain.descarga_html import made_text
+from descarga_html import made_text
 
 principal_link="https://joanribot.github.io/Proyecto"
 
@@ -20,6 +20,7 @@ def get_next_target(page_text):
     return url, end_quote
 
 def all_links(page_text):
+    assert isinstance(page_text, str)
     lista = []
     while True:
         url, endpos = get_next_target(page_text)
@@ -33,6 +34,7 @@ def all_links(page_text):
     return lista
 
 def html_todo(urls):
+    assert isinstance(urls, list) 
     html_links = []
     for link in urls:
         link_text=made_text(link)
@@ -41,6 +43,7 @@ def html_todo(urls):
 
 
 def crawl_web(seed):
+    assert isinstance(seed, str)
     tocrawl = [seed]
     crawled =[]
     while tocrawl:

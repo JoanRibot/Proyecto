@@ -1,15 +1,4 @@
 from html_string import htmls
-import pymongo
-
-try:
-    uri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.8i6ry.mongodb.net/test"
-    client = pymongo.MongoClient(uri)
-    client.server_info()
-    print ("Conectado al servidor %s")
-except pymongo.errors.ServerSelectionTimeoutError as error:
-    print( "Error al conectar al servidor %s") % error
-except pymongo.errors.CollectionInvalid as error:
-    print("could not connect to MongoDB %s") % error
 
 def busca_atributo(htmlPais, atributo):
     buscar = htmlPais.find(atributo)
@@ -58,14 +47,3 @@ def busca_menu(htmls,Atributos):
     return json
 
 json = busca_menu(htmls,Atributos)
-db = client.proyecto
-collection = db.diccionario
-collection.drop()
-
-try:    
-    collection.insert_one(json)
-    print("Successfully added")
-except Exception as error:
-    print("Error saving data")
-
-print(json)
