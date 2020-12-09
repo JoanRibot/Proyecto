@@ -1,4 +1,5 @@
 from requests_html import HTMLSession
+
 def made_text(principal_link):
     assert isinstance(principal_link,str)
     try:

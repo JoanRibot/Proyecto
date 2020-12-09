@@ -7,7 +7,7 @@ def get_next_target(page_text):
 
     assert isinstance(page_text, str)
     
-    url=""
+    url = ""
     start_link = page_text.find("<a href")
     if start_link == -1:
         return None, 0
@@ -62,5 +62,5 @@ def crawl_web(seed):
     return crawled
 
 
-links=crawl_web(principal_link)
+links = crawl_web(principal_link)
 htmls = html_todo(links)
