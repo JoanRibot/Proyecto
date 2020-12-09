@@ -44,6 +44,7 @@ Quitando las horas que no tenemos contabilizadas, que sobretodo fueron de lengua
 Posiblemente se podría mejorar alguna función y los nombres de las variables.
 
 A lo largo del proyecto hemos tenido varias dificultades, como no saber si se podían importar librerías e intentar hacer las cosas sin librerías, no saber usar correctamente el gitflow y tener errores con el entorno virtual porque uno tiene linux y otro microsoft.
+Y la dificultad que más tiempo nos ha llevado ha sido que cuando importamos una función de un módulo a otro. Cuando queríamos pasar los casos test, teniamos que poner en la ruta un . y cuando queríamos ejecutar el programa teníamos que quitarlo.
 
 ## Experiencia sobre el proyecto - Carlos
 
@@ -52,3 +53,7 @@ He aprendido mucho sobre programación en este proyecto, me he buscado la vida e
 que yo no sabía la otra persona a lo mejor me podía ayudar y también tengo que dar las gracias a los demás, que siempre que se les ha pedido alguna duda, han intentado ayudar.
 Este proyecto puede que esté mejor o peor, pero yo me siento bastante satisfecho de haber conseguido el objetivo, de haber aprendido y saber que me falta por aprender mucho más.
 
+## Experiencia sobre el proyecto - Joan
+Este proyecto me ha parecido interesante, también he aprendido mucho sobre programación en este proyecto, me he vuelto loco con el debugging buscando errores, y eso también me ha ayudado a entender mejor como funciona y a encontrar errores más rápido.
+Sobre hacerlo en equipo, pienso como Carlos, a la hora de resolver problemas es muy útil tener a otra persona que pueda resolverlos o explicartelos, y después estaban los compañeros, que siempre que te podían resolver algo, lo hacían.
+Aunque como dice carlos, este proyecto pueda estar peor o mejor, al final, aunque no sea algo perfecto, hemos aprendido mucho de él, y nos hemos podido dar cuenta de las carencias que tenemos y que tendré en cuenta de cara a futuros proyectos que pueda realizar.

@@ -1,5 +1,5 @@
 from typing import Collection
-from html_string import htmls
+from .html_string import htmls
 
 Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
 

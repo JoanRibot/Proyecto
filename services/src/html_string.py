@@ -1,10 +1,10 @@
-from descarga_html import made_text
+from .descarga_html import made_text
 
-principal_link="https://joanribot.github.io/Proyecto"
+principal_link = "https://joanribot.github.io/Proyecto"
 
 
 def get_next_target(page_text):
-    # Precondición
+
     assert isinstance(page_text, str)
     
     url=""
@@ -38,7 +38,7 @@ def html_todo(urls):
 
     html_links = []
     for link in urls:
-        link_text=made_text(link)
+        link_text = made_text(link)
         html_links.append(link_text)
 
     assert isinstance(html_links, list)  
@@ -49,7 +49,7 @@ def crawl_web(seed):
     assert isinstance(seed, str)
 
     tocrawl = [seed]
-    crawled =[]
+    crawled = []
     while tocrawl:
         page = tocrawl.pop()
         if page not in crawled:
