@@ -20,3 +20,4 @@ try:
     print("Successfully added")
 except Exception as error:
     print("Error saving data")
+    
