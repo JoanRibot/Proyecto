@@ -1,5 +1,5 @@
 import pymongo
-from ..programa import json
+from .extraer_atributos_html import json
 def subir_jason_bd():
     try:
         uri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.wiedk.mongodb.net/test"

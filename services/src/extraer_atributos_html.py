@@ -60,7 +60,7 @@ def menus_completos(html, Atributos):
     return menusPagina
 
 
-def busca_menu(htmls,Atributos):
+def crea_coleccion(htmls,Atributos):
 
     assert isinstance(Atributos, list)
     assert isinstance(htmls, list)
@@ -80,5 +80,5 @@ def busca_menu(htmls,Atributos):
     
     return json
 
-json = busca_menu(htmls,Atributos)
+json = crea_coleccion(htmls,Atributos)
 print(json)
