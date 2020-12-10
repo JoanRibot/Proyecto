@@ -1,4 +1,4 @@
-from services.src.programa import busca_atributo, menu_completo, menus_completos, busca_menu
+from services.src.extraer_atributos_html import busca_atributo, menu_completo, menus_completos, busca_menu
 from .htmlDePrueba import  tipoMedicamento, htmlMedicamentosPequeño, htmlMedicamentosGrande, htmlsAnimales,page_prueba
 
 

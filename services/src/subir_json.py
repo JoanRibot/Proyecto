@@ -1,6 +1,6 @@
 import pymongo
-from .extraer_atributos_html import json
-def subir_jason_bd():
+
+def subir_json_bd(json):
     try:
         uri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.wiedk.mongodb.net/test"
         client = pymongo.MongoClient(uri)
