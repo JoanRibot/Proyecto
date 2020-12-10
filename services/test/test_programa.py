@@ -1,6 +1,5 @@
-from services.src.extraer_atributos_html import busca_atributo, menu_completo, menus_completos, busca_menu
-from .htmlDePrueba import  tipoMedicamento, htmlMedicamentosPequeño, htmlMedicamentosGrande, htmlsAnimales,page_prueba
-
+from services.src.extraer_atributos_html import busca_atributo, menu_completo, menus_completos
+from .htmlDePrueba import  tipoMedicamento, htmlMedicamentosPequeño, htmlMedicamentosGrande, htmlsAnimales
 
 import pytest
 
@@ -24,8 +23,3 @@ def test_menus_completos():
     assert menus_completos(htmlMedicamentosGrande,tipoMedicamento) == {"menu1":{"AINE":"Dexketoprofeno","Diuretico":"Torasemida","Antihipertensivo":"Enalapril","Benzodiazepina":"Lorazepam","Hipolipemiante":"Atorvastatina","Antidepresivo":"Duloxetina"},"menu2":{"AINE":"Ibuprofeno","Diuretico":"Furosemida","Antihipertensivo":"Ramipril","Benzodiazepina":"Diazepam","Hipolipemiante":"Simvastatina","Antidepresivo":"Fluoxetina"},"menu3":{"AINE":"Naproxeno","Diuretico":"Indapamida","Antihipertensivo":"Lisinopril","Benzodiazepina":"Alprazolam","Hipolipemiante":"Rosuvastatina","Antidepresivo":"Escitalopram"}}
     assert menus_completos(htmlMedicamentosGrande,["nada","Aine","Antihipertensivo"]) == {}
     assert menus_completos('<p class="mamifero">mapache</p>< class="ave>loro</p>',tipoMedicamento) == {}
-
-@pytest.mark.busca_menu
-def test_busca_menus():
-    assert busca_menu(htmlsAnimales,["primero","segundo","tercero"])=={"mamifero":{"menu1":{"primero":"Mono","segundo":"Rata","tercero":"ornitorrinco"},"menu2":{"primero":"Ardilla","segundo":"Ratón","tercero":"Cabra"}},"ave":{"menu1":{"primero":"Loro","segundo":"Avestruz","tercero":"Gallina"},"menu2":{"primero":"Gaviota","segundo":"Paloma","tercero":"Colibrí"}},"Bicho":{"menu1":{"primero":"hormiga","segundo":"mosquito","tercero":"escarabajo"},"menu2":{"primero":"dragonfly","segundo":"mosca","tercero":"abeja"}}}
-
