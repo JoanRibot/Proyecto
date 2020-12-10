@@ -1,4 +1,4 @@
-from .domain.descarga_html import made_text
+from .descarga_html import made_text
 
 principal_link = "https://joanribot.github.io/Proyecto"
 
@@ -33,7 +33,7 @@ def all_links(page_text):
     assert isinstance(lista, list) 
     return lista
 
-def html_todo(urls):
+def html_todas_paginas(urls):
     assert isinstance(urls, list) 
 
     html_links = []
@@ -63,4 +63,4 @@ def crawl_web(seed):
 
 
 links = crawl_web(principal_link)
-htmls = html_todo(links)
+htmls = html_todas_paginas(links)
