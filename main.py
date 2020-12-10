@@ -6,4 +6,3 @@ sube_colecciones(htmls,Atributos) #subir los diccionarios a la coleccion de la B
 
 
 #borrar_coleccion() ##borrar la coleccion de la Base de Datos
-

@@ -3,7 +3,7 @@ from .descarga_html import made_text
 principal_link = "https://joanribot.github.io/Proyecto"
 
 
-def get_next_target(page_text):
+def get_next_target(page_text): 
 
     assert isinstance(page_text, str)
     
