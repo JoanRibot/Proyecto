@@ -1,4 +1,4 @@
-from services.src.domain.subir_json  import subir_jason_bd
+from services.src.extraer_atributos_html  import sube_colecciones, Atributos,htmls
 
 
-subir_jason_bd()
+sube_colecciones(Atributos,htmls)
