@@ -1,5 +1,7 @@
 from typing import Collection
 from .html_string import htmls
+from .conexion_bd import subir_json_bd
+
 
 Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
 
@@ -60,25 +62,20 @@ def menus_completos(html, Atributos):
     return menusPagina
 
 
-def crea_coleccion(htmls,Atributos):
+def sube_colecciones(htmls,Atributos):
 
     assert isinstance(Atributos, list)
     assert isinstance(htmls, list)
-    
-    count = 0
-    json = {}
-
     for i in htmls:
         pais,resto = busca_atributo(i, "lugar")
+        json = {}
         if pais == None:
             continue
         menus = menus_completos(resto,Atributos)
         json[pais] = menus
-        count += 1
+        subir_json_bd(json)    
+        json.pop(pais)
 
-    assert isinstance(json,Collection)
-    
-    return json
+        assert isinstance(json,Collection)
 
-json = crea_coleccion(htmls,Atributos)
-print(json)
+ 

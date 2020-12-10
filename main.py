@@ -1,4 +1,9 @@
-from services.src.domain.subir_json  import subir_jason_bd
+from services.src.extraer_atributos_html  import sube_colecciones, Atributos
+from services.src.html_string import htmls
+from services.src.conexion_bd import borrar_coleccion
+
+sube_colecciones(htmls,Atributos) #subir los diccionarios a la coleccion de la Base de Datos
 
 
-subir_jason_bd()
+#borrar_coleccion() ##borrar la coleccion de la Base de Datos
+
