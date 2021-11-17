@@ -3,7 +3,7 @@ from .html_string import htmls
 from .conexion_bd import subir_json_bd
 
 
-Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "plato4", "stck", "price", "valoration"]
+Atributos = ["menuCompleto", "plato1", "plato2", "plato3", "bebida", "stck", "price", "valoration"]
 
 def busca_atributo(htmlPais, atributo):
 
@@ -35,7 +35,7 @@ def menu_completo(Atributos,html):
         if i.find('plato') != -1:
             nombre, resto = busca_atributo(html, i)
             platos.append(nombre)
-            if len(platos) ==4:
+            if len(platos) == 3:
                 diccionario['platos']=platos
         else:
             nombre, resto = busca_atributo(html, i)
