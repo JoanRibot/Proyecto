@@ -39,10 +39,6 @@ def menu_completo(Atributos,html):
                 diccionario['platos']=platos
         else:
             nombre, resto = busca_atributo(html, i)
-            try: 
-                float(nombre)
-            except:
-                print("nope")
             try:
                 if nombre.isnumeric()==True:
                     if "," in nombre:
