@@ -30,52 +30,55 @@ def menu_completo(Atributos,html):
 
     diccionario = {}
     resto = ""
-
+    platos=[]
     for i in Atributos:
-        nombre, resto = busca_atributo(html, i)
-        if nombre == None:
-            return None, 0
-        diccionario[i] = nombre
+        if i.find('plato') != -1:
+            nombre, resto = busca_atributo(html, i)
+            platos.append(nombre)
+            if len(platos) ==4:
+                diccionario['platos']=platos
+        else:
+            nombre, resto = busca_atributo(html, i)
+            if nombre == None:
+                return None, 0
+            nombre, resto = busca_atributo(html, i)
+            diccionario[i] = nombre
 
     assert isinstance(diccionario, Collection)
 
     return diccionario, resto
 
-def menus_completos(html, Atributos):
-
-    assert isinstance(Atributos, list)
-    assert isinstance(html, str)
-
-    resto = html
-    count = 1
-    menusPagina = {}
-
-    while True:
-        diccionario, resto = menu_completo(Atributos, resto)
-        if diccionario == None:
-            break
-        menusPagina["menu" + str(count)] = diccionario
-        count += 1
-
-    assert isinstance(menusPagina, Collection)
-
-    return menusPagina
-
-
-def sube_colecciones(htmls,Atributos):
+def menus_completos(htmls, Atributos):
 
     assert isinstance(Atributos, list)
     assert isinstance(htmls, list)
-    for i in htmls:
-        pais,resto = busca_atributo(i, "lugar")
-        json = {}
-        if pais == None:
-            continue
-        menus = menus_completos(resto,Atributos)
-        json[pais] = menus
-        subir_json_bd(json)    
-        json.pop(pais)
 
-        assert isinstance(json,Collection)
+    for i in htmls:
+        pais, resto = busca_atributo(i, "lugar")
+        while True:
+            diccionario, i = menu_completo(Atributos, i)
+            if diccionario == None:
+                break
+            diccionario["lugar"] = pais
+            subir_json_bd(diccionario)  
+
+
+
+
+# def sube_colecciones(htmls,Atributos):
+
+#     assert isinstance(Atributos, list)
+#     assert isinstance(htmls, list)
+#     for i in htmls:
+#         pais,resto = busca_atributo(i, "lugar")
+#         json = {}
+#         if pais == None:
+#             continue
+#         menus = menus_completos(resto,Atributos)
+#         json[pais] = menus
+#         subir_json_bd(json)    
+#         json.pop(pais)
+
+#         assert isinstance(json,Collection)
 
  
