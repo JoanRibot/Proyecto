@@ -2,7 +2,8 @@ import pymongo
 
 def subir_json_bd(json):
     try:
-        uri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.wiedk.mongodb.net/test"
+        #uri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.wiedk.mongodb.net/test"
+        uri = "mongodb+srv://m001-student:m001-mongodb-basics@proyecto-web-scrapping.8i6ry.mongodb.net/test"
         client = pymongo.MongoClient(uri)
         client.server_info()
         print ("Conectado al servidor")
@@ -22,7 +23,8 @@ def subir_json_bd(json):
 
 def borrar_coleccion():
     try:
-        uri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.wiedk.mongodb.net/test"
+        #uri = "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.wiedk.mongodb.net/test"
+        uri = "mongodb+srv://m001-student:m001-mongodb-basics@proyecto-web-scrapping.8i6ry.mongodb.net/test"
         client = pymongo.MongoClient(uri)
         client.server_info()
         print ("Conectado al servidor")
