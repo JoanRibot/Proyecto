@@ -3,7 +3,7 @@ from .html_string import htmls
 from .conexion_bd import subir_json_bd
 
 
-Atributos = ["nombre", "plato1", "plato2", "plato3", "bebida", "stck", "price", "valoration"]
+Atributos = ["nombre", "plato1", "plato2", "plato3", "bebida", "stck", "price", "valoration","numberValoration"]
 
 def busca_atributo(htmlPais, atributo):
 
